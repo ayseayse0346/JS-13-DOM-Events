@@ -49,3 +49,38 @@ body.onload=function(){
    
 //     myinput.focus()
 // }
+
+// ? ÖRNEK: onclick eventi
+// butona tıklandığında tetilensin istiyorum
+
+//! selektör (selektörleri artık burda yapacağım hepsini .olması gereken buymuş)
+
+const addButton = document.getElementById("btn")
+const ul = document.querySelector("ul")
+
+// event tanımlama
+
+addButton.onclick = (e)=>{
+    // eğer fonksiyonun parantezinin içine e veya event gibi yazarsak clg ile yazdığımızda bu event ile ilgili bir sürü bilgi alabiliriz.
+// console.log(e);
+// console.log(e.target);
+// console.log(e.target.value);
+// console.log(e.target.id,e.target.name);
+
+// ?yeni bir li elemnti açacağız
+// boş bir eklmeyi engellemk için:
+if(!myinput.value.trim()){  //trim() space yapıldığında da ekleme yapmasın bu uyarıyı versin diye yaptık.
+    alert("lütfen bir içerik giriniz")
+    myinput.focus()
+    return
+}
+const li = document.createElement("li")
+li.textContent =myinput.value
+ul.appendChild(li)
+myinput.value ="" //eklediğimizi silemk için yaptık. 
+myinput.focus() // fokuslanıyor hemen onun için yaptık
+
+}
+
+// ?entera basarak tetiklensin.tanımlansın: onsbmit
+
