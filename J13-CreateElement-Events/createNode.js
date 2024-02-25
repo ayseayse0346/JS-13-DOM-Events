@@ -63,5 +63,32 @@ html.after(newLi2)
 const react = document.querySelector("ul li:nth-child(4)")
 react.before(newLi)  //bu şekilde go reactın önüne eklenmi,ş oldu.
 
+// **********  Id ,Class gibi özellikleri atama   ************//
+// ilgili elementlere ilgili attributleri verebiliriz.2 yöntem var:
+// ?1- elemnt.attribute = "yeni değer"
+// YAZMA
+newLi.className = "list center bold red" //burda da birden fazla class verebiliriz.
+newLi2.id = "new-li"
+// newLi.type = "button"
+newLi.name = "list"
+// OKUMA
+console.log(newLi.className);
 
 
+// ? 2- satAttribute() bu methodla (atr ,değer) , getAtribute("atr")
+// YAZMA
+newLi2.setAttribute("class","list ")
+
+// !birden fazla class verebiliriz. yeni bir style.css oluşturduk orda red classı oluşturup burda da veridk.
+newLi2.setAttribute("class","list red bold")//kırmıxı rengini aldı 
+
+// OKUMA
+console.log(newLi2.getAttribute("class"));  
+
+// bootstrapta da yapabiliriz.bootstarpta linki alıp html de head kısmına yapıştırdık.
+
+newLi2.setAttribute("class","list text-success bg-warning")
+newLi.className = "text-success bg-danger"
+
+// ?3- (classList) eskiyi silmez üzerine eklker
+newLi2.classList.add("border", "border-success", "border-5")  
