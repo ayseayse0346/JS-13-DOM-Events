@@ -42,3 +42,10 @@ body.onload=function(){
    
     myinput.focus()
 }
+
+// ?NOT DOMContentLoaded (metin v.b içerikler yüklenince tetiklenir. Resim , link gibi içeriklerin yüklenmesini benklmez)
+
+// body.DOMContentLoaded=function(){
+   
+//     myinput.focus()
+// }
