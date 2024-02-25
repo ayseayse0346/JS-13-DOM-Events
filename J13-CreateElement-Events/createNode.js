@@ -16,7 +16,7 @@
 
 //! **************************bu dört methoda örnek  ************************/ 
 
- 
+
 
 // ? yeni bir li elementi oluşturp doma eklmek istiyorum bunu js ile yapmak istiyorum
 
@@ -77,30 +77,55 @@ console.log(newLi.className);
 
 // ? 2- satAttribute() bu methodla (atr ,değer) , getAtribute("atr")
 // YAZMA
-newLi2.setAttribute("class","list ")
+newLi2.setAttribute("class", "list ")
 
 // !birden fazla class verebiliriz. yeni bir style.css oluşturduk orda red classı oluşturup burda da veridk.
-newLi2.setAttribute("class","list red bold")//kırmıxı rengini aldı 
+newLi2.setAttribute("class", "list red bold")//kırmıxı rengini aldı 
 
 // OKUMA
-console.log(newLi2.getAttribute("class"));  
+console.log(newLi2.getAttribute("class"));
 
 // bootstrapta da yapabiliriz.bootstarpta linki alıp html de head kısmına yapıştırdık.
 
-newLi2.setAttribute("class","list text-success bg-warning")
+newLi2.setAttribute("class", "list text-success bg-warning")
 newLi.className = "text-success bg-danger"
 
 // ?3- classList.add("","") eskiyi silmez üzerine eklker
-newLi2.classList.add("border", "border-success", "border-5")  
+newLi2.classList.add("border", "border-success", "border-5")
 // !bunu silebiliyoruz da classlist.remove("","")
-newLi2.classList.remove("bold","border")
+newLi2.classList.remove("bold", "border")
 // ! içinde şu class bulunur mu bulunmaz mı bunu da sorgulayabilirz. dönüşü true veya false olur yani boolen nbir değer.classList.contains("","")
 console.log(newLi2.classList.contains("red"));
-console.log(newLi2.classList.contains("text-success"));  
+console.log(newLi2.classList.contains("text-success"));
 
 // ? newli nin classlistlerine bak ve değiştir.varsa değiştirir. yoksa ekler. element.classlist.toggle("")
 
 newLi.classList.toggle("center")
 newLi2.classList.toggle("bold") //bold classı yoktu onu ekledi 
+
+
+// ********** YENİ BİR ELEMENT OLUŞTURMA (innerHTML) İLE ---- İLKEL YÖNTEM -GÜVENSİZ YÖNTEM------********//
+
+// ?YENİ BİR İNPUT VE BUTTON EKLEMEYE ÇALIŞALIM BUNLAR DA BİR DİVİN İÇİNDE OLACAKLAR.ÖNCELİKLE NEYİN DEVAMINA EKLEYECEĞİZ ONA KARAR VERECEĞİZ. HTML SAYFASINDAKİ SON SECTİONDAN SONRA DİV İÇİNDE İNPUT VE BUTTON OLUŞTURMAK İSTiyoruz.o yüzden main seçtik.ama main seçince var olanlar silindi . bundan dolayoı inner.html den sonra += yaptık yani bundan önceki main gitmesin devamna eklensin.
+// bu yöntemle sanki bir html kodu yazar gibi yapabiliriz.
+document.querySelector("main").innerHTML += `
+
+<div  class="d-flex gap-2">
+<input type="text"  />
+<button class="btn btn-danger">submit</button>
+
+</div>
+
+
+<div class="card mt-4 " style="width: 18rem;">
+  <img src="https://cdn.pixabay.com/photo/2023/10/13/08/32/bird-8312424_640.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+`
 
 
