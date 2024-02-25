@@ -42,6 +42,19 @@ newLi.appendChild(textLi) //OLUŞTU FAKAT DOMA BAĞLI DEĞİL. DOM DA NEREYE BA�
 //  UL'NİN SONUNA EKLMEK İSTİYORUZ. O YÜZDEN BODY YERİNE UL YAZACAĞIZ.
 document.querySelector("ul").appendChild(newLi) // artık ulnin en sonunda go görmüş oluyoruz.
 
+// ? ÖRNEK: 2. BİR Lİ OLUŞTURALIM
+
+const newLi2 = document.createElement("li");
+newLi2.textContent = "C++";
+
+const html = document.querySelector("ul li:nth-child(1)")
+
+html.after(newLi2)
+
+
+
+
+
 // ! MDN den baktık: element.before()  veya elemnet.after() bu şekilde önüne ve sonuna istediğimiz elemnti veya virgülle istediğimniz kadar element ekleyebiliriz.
 
 // ? reactın önüne newli yi ekle yaptık
@@ -49,3 +62,6 @@ document.querySelector("ul").appendChild(newLi) // artık ulnin en sonunda go g�
 
 const react = document.querySelector("ul li:nth-child(4)")
 react.before(newLi)  //bu şekilde go reactın önüne eklenmi,ş oldu.
+
+
+
