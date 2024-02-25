@@ -90,5 +90,17 @@ console.log(newLi2.getAttribute("class"));
 newLi2.setAttribute("class","list text-success bg-warning")
 newLi.className = "text-success bg-danger"
 
-// ?3- (classList) eskiyi silmez üzerine eklker
+// ?3- classList.add("","") eskiyi silmez üzerine eklker
 newLi2.classList.add("border", "border-success", "border-5")  
+// !bunu silebiliyoruz da classlist.remove("","")
+newLi2.classList.remove("bold","border")
+// ! içinde şu class bulunur mu bulunmaz mı bunu da sorgulayabilirz. dönüşü true veya false olur yani boolen nbir değer.classList.contains("","")
+console.log(newLi2.classList.contains("red"));
+console.log(newLi2.classList.contains("text-success"));  
+
+// ? newli nin classlistlerine bak ve değiştir.varsa değiştirir. yoksa ekler. element.classlist.toggle("")
+
+newLi.classList.toggle("center")
+newLi2.classList.toggle("bold") //bold classı yoktu onu ekledi 
+
+
