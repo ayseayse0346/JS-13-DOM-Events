@@ -58,6 +58,8 @@ body.onload=function(){
 const addButton = document.getElementById("btn")
 const ul = document.querySelector("ul")
 
+const form = document.querySelector("form")
+
 // event tanımlama
 
 addButton.onclick = (e)=>{
@@ -81,6 +83,31 @@ myinput.value ="" //eklediğimizi silemk için yaptık.
 myinput.focus() // fokuslanıyor hemen onun için yaptık
 
 }
+// !alternatif yöntem indexte section form yaptık buttonu da submit yaparak bunu kullandık.
+// ?form içersindeki submit butonuna her basıldığında bu onsubmit eventi tetiklenir.
+// submit eventi otomatik olarak enter tuşunun kullanmını sağlar.
+// ?entera basarak tetiklensin,otomatik eklensin.tanımlansın: onsbmit eventi kullanırsak onclick eventene grek kalmıyor.
+// yukarda selektor kısmında query selektor ile önce formu çağırdık.submit aslında sayfayı da refressh yapıyor ama biz onu göremiyoruz hızlı yapıyor.biz istersek sayfanın refresh engelleyebiliyoruz. bu otomatik refresh submitin doğaal davranışı
+// ! preventDefault davranışı iptal et demek.
 
-// ?entera basarak tetiklensin.tanımlansın: onsbmit
+form.onsubmit = function(e){
+e.preventDefault()  //sabmit işleminin temel davranışlarını iptal eder.(formu silmek sayfayı refresh yapmak gibi)
+} 
 
+myinput.onkeydown = function(e){ //inputun üzerinde bir tuşa basıldığında bir event tetiklenecek.
+    // mesela e tuşuna bastım yine inputa tıklamış gibi oldum.
+    console.log(e.code);  //bu ne demek: bana e içindeki bastığım kodu göster diyor yani hangi tuşa bastığımı gösterdi. submit kulanmadan da entera basıp aynı işimizi görebiliyoruz.
+
+
+
+}
+
+// ?alternatif yöntem 2
+// !yine form yaptığımız kısmı sectiona çevirdik submiti de button yaptık bu yöntemi kullandık.
+myinput.onkeydown = function(e){
+if(e.code === "Enter"){
+    addButton.click()
+}
+}
+
+// eğer klavyeden girilen enter tuşu ise onclcick çağır yukarda buton için tanımlamıştık.
